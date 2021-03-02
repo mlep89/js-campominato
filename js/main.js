@@ -2,21 +2,25 @@
 var arrayBombe = [];
 var arrayNumeriUtente = [];
 var numBombe = 16;
-
+var livello = undefined;
+var max = 100;
 /*Fino a quando il prompt inserito non è uguale a 0-1-2 richiedere il prompt.*/
 while ((livello != 0) && (livello != 1) && (livello != 2)) {
-    var livello = parseInt(prompt("Benvenuto a Campo Minato. Scegli il livello di difficoltà del gioco digitando 0 , 1 , 2"));
-    //Se il prompt inserito ha valore 0 assegnare alla var max il valore 100.
-    if (livello == "0") {
-       var max = 100;
-    }
-    //Se il prompt inserito ha valore 1 assegnare alla var max il valore 80.
-    else if (livello == "1") {
-      var max = 80;
-    }
-    //Se il prompt inserito ha valore 2 assegnare alla var max il valore 50.
-    else if (livello == "2") {
-      var max = 50;
+    livello = parseInt(prompt("Benvenuto a Campo Minato. Scegli il livello di difficoltà del gioco digitando 0 , 1 , 2"));
+    switch (livello) {
+        case 0:
+            max = 100;
+            break;
+        case 1:
+            max = 80;
+            break;
+        case 2:
+            max = 50;
+            break;
+    
+        default:
+            alert("Inserisci un valorei idoneo");
+            break;
     }
 }
 
